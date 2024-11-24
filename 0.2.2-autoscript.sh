@@ -99,7 +99,7 @@ sudo systemctl stop emped
 sudo systemctl disable emped
 sudo rm -rf /etc/systemd/system/emped.service
 sudo rm $(which emped)
-sudo rm -rf $HOME/.empe
+sudo rm -rf $HOME/.empe-chain
 sed -i "/emped_/d" $HOME/.bash_profile
 
 # Update packages and install dependencies
@@ -115,13 +115,13 @@ echo 'export PORT='$PORT
 
 # Setting environment variables
 echo "export MONIKER=$MONIKER" >> $HOME/.bash_profile
-echo "export EMPED_CHAIN_ID=\"empe-testnet-2\"" >> $HOME/.bash_profile
+echo "export EMPE_CHAIN_ID=\"empe-testnet-2\"" >> $HOME/.bash_profile
 echo "export EMPED_PORT=$PORT" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 printLine
 echo -e "Moniker:        \e[1m\e[32m$MONIKER\e[0m"
-echo -e "Chain ID:       \e[1m\e[32m$EMPED_CHAIN_ID\e[0m"
+echo -e "Chain ID:       \e[1m\e[32m$EMPE_CHAIN_ID\e[0m"
 echo -e "Node custom port:  \e[1m\e[32m$EMPED_PORT\e[0m"
 printLine
 sleep 1
@@ -182,10 +182,10 @@ sudo systemctl enable emped
 
 # Initialize the node
 printGreen "7. Initializing the node..."
-emped config set client chain-id ${EMPED_CHAIN_ID}
+emped config set client chain-id ${EMPE_CHAIN_ID}
 emped config set client keyring-backend test
 emped config set client node tcp://localhost:${EMPED_PORT}657
-emped init ${MONIKER} --chain-id ${EMPED_CHAIN_ID}
+emped init ${MONIKER} --chain-id ${EMPE_CHAIN_ID}
 
 # Download genesis and addrbook files
 printGreen "8. Downloading genesis and addrbook..."

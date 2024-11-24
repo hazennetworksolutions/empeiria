@@ -152,7 +152,6 @@ chmod +x emped
 mv $HOME/emped $HOME/.empe-chain/cosmovisor/upgrades/v0.2.2/bin
 sudo ln -s $HOME/.empe-chain/cosmovisor/upgrades/v0.2.2 $HOME/.empe-chain/cosmovisor/current -f
 sudo ln -s $HOME/.empe-chain/cosmovisor/current/bin/emped /usr/local/bin/emped -f
-mkdir -p $HOME/.empe-chain/cosmovisor/genesis/bin
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.6.0
 
 # Create service file

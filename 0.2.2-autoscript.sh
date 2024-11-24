@@ -144,6 +144,7 @@ echo $(go version) && sleep 1
 
 # Download Prysm protocol binary
 printGreen "3. Downloading Empeiria binary and setting up..." && sleep 1
+cd $HOME
 mkdir -p $HOME/.empe-chain/cosmovisor/upgrades/v0.2.2/bin
 wget https://github.com/empe-io/empe-chain-releases/raw/master/v0.2.2/emped_v0.2.2_linux_amd64.tar.gz
 tar -xvf emped_v0.2.2_linux_amd64.tar.gz

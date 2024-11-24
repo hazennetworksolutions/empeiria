@@ -182,9 +182,6 @@ sudo systemctl enable emped
 
 # Initialize the node
 printGreen "7. Initializing the node..."
-emped config set client chain-id ${EMPE_CHAIN_ID}
-emped config set client keyring-backend test
-emped config set client node tcp://localhost:${EMPED_PORT}657
 emped init ${MONIKER} --chain-id ${EMPE_CHAIN_ID}
 
 # Download genesis and addrbook files
